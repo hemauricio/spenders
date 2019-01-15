@@ -1,6 +1,7 @@
 import smtplib, ssl
 import config
 from secrets import secrets
+from ..utils import utils
 
 from email.mime.text import MIMEText
 
@@ -31,7 +32,7 @@ class SMTP(object):
         self.server.sendmail(self.femail, self.temail, self.msg)
 
     # Hard coded message
-    def create_msg(self):
-        _msg = MIMEText("Message created with create_msg")
-        _msg["Subject"] = "Spenders automatic email"
+    def create_msg(self, text="Message created with create_msg"):
+        _msg = MIMEText(text)
+        _msg["Subject"] = "Spenders automatic email - " + utils.today(as_string=True)
         self.msg = _msg.as_string()

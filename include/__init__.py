@@ -1,3 +1,3 @@
-__all__ = ["modules"]
+__all__ = ["modules", "utils"]
 
 from . import *
