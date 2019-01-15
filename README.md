@@ -51,6 +51,19 @@ PASSWORD = "your_app_password"
 TEMAIL = "to_email@gmail.com"
 ```
 
-**_App password_ and _regular password_**
-I am using an _app password_ Gmail provided me due to the 2 step authentication I have in my from_email@gmail.com. You can create one yourself following [this tutorial](https://www.lifewire.com/get-a-password-to-access-gmail-by-pop-imap-2-1171882).
-If you do not have 2 step authentication you can use your _regular password_, the one you use to log into your account.
+# **_App password_ and _regular password_**
+
+On **secrets.py** I am referencing two types of _PASSWORD_.
+
+**App password:**
+
+The account I am using to send emails has 2 step authentication activated, you
+can not login with smtplib using the regular password you use on the Gmail
+interface.
+
+To be able to login with smtplib for an account with 2 step authentication
+you will need an **_app password_**. You can create one yourself following [this tutorial](https://www.lifewire.com/get-a-password-to-access-gmail-by-pop-imap-2-1171882).
+
+**Regular password:**
+
+If you are going to use an account that does not have 2 step authentication you can use your **_regular password_**, the one you use to log into your account.
